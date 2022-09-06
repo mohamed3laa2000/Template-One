@@ -9,6 +9,16 @@
 body {
   font-family: "Work Sans", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  padding: 15px;
+}
 /* start special elements */
 .container {
   margin: 0 auto;
@@ -39,6 +49,33 @@ body {
   }
 }
 /* end special elements */
+/* start scroll to top */
+.scroll-to-top {
+  position: fixed;
+  right: -40px;
+  bottom: 10px;
+  background-color: var(--main-color);
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.5s;
+  z-index: 10;
+}
+.scroll-to-top i {
+  font-weight: bolder;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0px;
+  color: white;
+}
+.scroll-to-top.scroll {
+  right: 10px;
+}
+/* end scroll to top */
+
 /* start nav */
 nav {
   display: flex;
@@ -64,7 +101,6 @@ nav ul {
   display: none;
 }
 nav ul li {
-  padding: 15px;
   border-bottom: 1px solid #9ccc;
   user-select: none;
   cursor: pointer;
@@ -95,7 +131,7 @@ nav i {
   font-size: 22px;
   cursor: pointer;
 }
-nav div:hover ul {
+nav div ul.active {
   display: block;
 }
 nav img {
